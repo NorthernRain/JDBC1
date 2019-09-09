@@ -21,6 +21,8 @@ public class Demo1 {
             //4.执行SQL语句
             String sql = "create table jdbct1(id int primary key auto_increment,name varchar(10)) charset=utf8";
             statement.execute(sql);
+            String sql1="insert into jdbct1 values(1,'牛魔王')";
+            statement.execute(sql1);
             System.out.println("success");
             //5.关闭资源
             connection.close();
