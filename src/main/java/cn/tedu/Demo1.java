@@ -10,21 +10,15 @@ import java.sql.Statement;
  */
 public class Demo1 {
     public static void main(String[] args) {
-        //1.注册驱动： 告诉虚拟机使用的是哪个数据库软件
+
         try {
+            //注册驱动
             Class.forName("com.mysql.jdbc.Driver");
-            //2.获取连接对象
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newdb3", "root", "123456");
-            System.out.println(connection);
-            //3.创建SQL执行对象
-            Statement statement = connection.createStatement();
-            //4.执行SQL语句
-            String sql = "create table jdbct1(id int primary key auto_increment,name varchar(10)) charset=utf8";
+            //建立连接
+            Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/newdb3","root","123456");
+            Statement statement=connection.createStatement();
+            String sql="create table t1(id int,name varchar(10))charset=utf8";
             statement.execute(sql);
-            String sql1="insert into jdbct1 values(1,'牛魔王')";
-            statement.execute(sql1);
-            System.out.println("success");
-            //5.关闭资源
             connection.close();
         } catch (Exception e) {
             e.printStackTrace();

@@ -14,7 +14,7 @@ public class Demo2 {
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/newdb3","root","123456");
             Statement statement=connection.createStatement();
-            String sql="drop table jdbct1";
+            String sql="drop table t1";
             statement.execute(sql);
             System.out.println("delete successfully");
         } catch (Exception e) {
